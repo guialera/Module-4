@@ -1,0 +1,55 @@
+.App{
+    background-color: coral;
+}
+
+.light-themeNavBar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: bisque;
+    font-size: 40px;
+    color: fuchsia
+}
+
+.dark-themeNavBar{
+    display: flex;
+    justify-content: space-evenly;
+    background-color: black;
+    font-size: 40px;
+    color: white;
+}
+
+.light-themeMain{
+    background-color: aquamarine;
+    text-align: center;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: burlywood;
+}
+
+.dark-themeMain{
+    background-color: darkblue;
+    text-align: center;
+    font-size: 60px;
+    text-transform: uppercase;
+    color: red;
+}
+
+.light-themeFooter{
+    background-color: salmon;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color:springgreen
+}
+
+.dark-themeFooter{
+    background-color: darkgreen;
+    text-align: center;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: black
+}
+
+.buttonDiv{
+    text-align: center;
+}
