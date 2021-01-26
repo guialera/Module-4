@@ -9,6 +9,7 @@ import Ugly from "./Ugly"
 function App() {
     return (
         <div>
+            <h1>React Ugly Things</h1>
             <Form />
             <Ugly />
 

@@ -1,0 +1,46 @@
+body{
+    background-color: aquamarine;
+}
+
+h1{
+    font-size: 50px;
+    text-transform: uppercase;
+    text-align: center;
+}
+
+.topFormDiv{
+    text-align: center;
+    background-color: peachpuff;
+    height: 200px;
+    width: auto;
+}
+
+.form{
+    padding-top: 75px;
+}
+
+.uglyImageDiv{
+    text-align: center;
+    background-color: fuchsia;
+    margin-right: 400px;
+    margin-left: 400px;
+}
+
+.title{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.description{
+    font-size: 20px;
+    text-transform: uppercase;
+}
+
+.editFormDiv{
+    text-align: center;
+    margin-top: 20px;
+}
+
+.editButton{
+    justify-content: center;
+}

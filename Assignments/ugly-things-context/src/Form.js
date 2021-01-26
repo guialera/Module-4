@@ -18,8 +18,8 @@ class Form extends React.Component {
 
     render() {
         return (
-            <div>
-                <form>
+            <div className="topFormDiv">
+                <form className="form">
                     <input
                         type="text"
                         name="title"
