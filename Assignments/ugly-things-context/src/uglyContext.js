@@ -110,7 +110,7 @@ class UglyContextProvider extends React.Component {
         axios.get("https://api.vschool.io/alexramirez/thing")
             .then(response => this.setState({
                 uglyThingsArr: response.data
-            }))
+            }), window.location.reload())
             .catch(error => console.log(error))
 
         console.log(this.state.uglyThingsArr)
@@ -120,7 +120,7 @@ class UglyContextProvider extends React.Component {
         console.log(id)
 
         axios.delete(`https://api.vschool.io/alexramirez/thing/${id}`)
-            .then(response => console.log(response))
+            .then(response => console.log(response), window.location.reload())
             .catch(error => console.log(error))
 
     }
@@ -156,39 +156,44 @@ class UglyContextProvider extends React.Component {
             description: "",
             id: "",
             showForm: false
-        })
+        }, function () { window.location.reload() })
     }
 
     render() {
 
         return (
-            <Provider value={{ uglyThingsArr: this.state.uglyThingsArr, submittedInfo: this.submittedInfo, deletePost: this.deletePost, editPost: this.editPost }}>
+            <Provider value={{
+                uglyThingsArr: this.state.uglyThingsArr,
+                submittedInfo: this.submittedInfo,
+                deletePost: this.deletePost,
+                editPost: this.editPost
+            }}>
                 {this.props.children}
                 <div className="editFormDiv">
-                <form style={{ display: this.state.showForm ? "block" : "none" }}>
-                    <input
-                        type="text"
-                        name="title"
-                        placeHolder="Image Title"
-                        value={this.state.title}
-                        onChange={this.fillIn}
-                    />
-                    <input
-                        type="text"
-                        name="url"
-                        placeHolder="Image Url"
-                        value={this.state.url}
-                        onChange={this.fillIn}
-                    />
-                    <input
-                        type="text"
-                        name="description"
-                        placeHolder="Description"
-                        value={this.state.description}
-                        onChange={this.fillIn}
-                    />
-                </form>
-                <button className="editButton" style={{ display: this.state.showForm ? "block" : "none" }} onClick={this.submitEdit}>Submit Edit</button>
+                    <form style={{ display: this.state.showForm ? "block" : "none" }}>
+                        <input
+                            type="text"
+                            name="title"
+                            placeHolder="Image Title"
+                            value={this.state.title}
+                            onChange={this.fillIn}
+                        />
+                        <input
+                            type="text"
+                            name="url"
+                            placeHolder="Image Url"
+                            value={this.state.url}
+                            onChange={this.fillIn}
+                        />
+                        <input
+                            type="text"
+                            name="description"
+                            placeHolder="Description"
+                            value={this.state.description}
+                            onChange={this.fillIn}
+                        />
+                    </form>
+                    <button className="editButton" style={{ display: this.state.showForm ? "block" : "none" }} onClick={this.submitEdit}>Submit Edit</button>
                 </div>
             </Provider>
         )
