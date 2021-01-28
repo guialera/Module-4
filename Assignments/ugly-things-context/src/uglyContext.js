@@ -95,8 +95,16 @@ class UglyContextProvider extends React.Component {
 
         console.log(newPost)
 
+        /*axios.post("https://api.vschool.io/alexramirez/thing", newPost)
+            .then(response => console.log(response.data), this.update())
+            .catch(error => console.log(error))*/
+
         axios.post("https://api.vschool.io/alexramirez/thing", newPost)
-            .then(response => console.log(response.data))
+            .then(response => this.setState((prevState) => {
+                return {
+                    uglyThingsArr: [...prevState.uglyThingsArr, response.data]
+                }
+            }))
             .catch(error => console.log(error))
 
         /*axios.get("https://api.vschool.io/alexramirez/thing")
@@ -107,20 +115,33 @@ class UglyContextProvider extends React.Component {
             }))
             .catch(error => console.log(error))*/
 
-        axios.get("https://api.vschool.io/alexramirez/thing")
+        /*axios.get("https://api.vschool.io/alexramirez/thing")
             .then(response => this.setState({
                 uglyThingsArr: response.data
             }), window.location.reload())
             .catch(error => console.log(error))
 
-        console.log(this.state.uglyThingsArr)
+        console.log(this.state.uglyThingsArr)*/
     }
 
     deletePost = (id) => {
         console.log(id)
 
+        this.setState((prevState) => {
+            let newArr = prevState.uglyThingsArr.filter(each => {
+                if (each._id !== id) {
+                    return true
+                } else if (each._id === id) {
+                    return false
+                }
+            })
+            return {
+                uglyThingsArr: newArr
+            }
+        })
+
         axios.delete(`https://api.vschool.io/alexramirez/thing/${id}`)
-            .then(response => console.log(response), window.location.reload())
+            .then(response => console.log(response.data))
             .catch(error => console.log(error))
 
     }
@@ -146,17 +167,42 @@ class UglyContextProvider extends React.Component {
 
         let id = this.state.id
 
+        this.setState((prevState) => {
+            let editArr = prevState.uglyThingsArr.map(function (each) {
+                if (each._id === id) {
+                    return {
+                        ...each,
+                        title: prevState.title,
+                        description: prevState.description,
+                        imgUrl: prevState.url
+                    }
+                } else if (each._id !== id) {
+                    return {
+                        ...each
+                    }
+                }
+            })
+            return {
+                title: "",
+                url: "",
+                description: "",
+                id: "",
+                showForm: false,
+                uglyThingsArr: editArr
+            }
+        })
+
         axios.put(`https://api.vschool.io/alexramirez/thing/${id}`, editPost)
-            .then(response => console.log(response))
+            .then(response => console.log(response.data))
             .catch(error => console.log(error))
 
-        this.setState({
+        /*this.setState({
             title: "",
             url: "",
             description: "",
             id: "",
             showForm: false
-        }, function () { window.location.reload() })
+        })*/
     }
 
     render() {

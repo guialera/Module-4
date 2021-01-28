@@ -16,6 +16,14 @@ class Form extends React.Component {
         })
     }
 
+    reset = () => {
+        this.setState({
+            title: "",
+            url: "",
+            description: ""
+        })
+    }
+
     render() {
         return (
             <div className="topFormDiv">
@@ -47,6 +55,7 @@ class Form extends React.Component {
                         <button onClick={() => data.submittedInfo(this.state.title, this.state.url, this.state.description)}>Submit Info</button>
                     )}
                 </UglyContextConsumer>
+                <button onClick={this.reset}>Reset Form</button>
             </div>
         )
     }
