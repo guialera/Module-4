@@ -1,0 +1,79 @@
+body{
+    background-color: aquamarine;
+}
+
+nav{
+    /*background-color: rgb(69, 120, 187);*/
+    background-color: fuchsia;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 30px;
+}
+
+footer{
+    background-color: fuchsia;
+    position: absolute;
+    text-align: center;
+    font-size: 20px;
+    width: 100%;
+    bottom: 0;
+}
+
+.linkText{
+    text-decoration: none;
+    font: black;
+}
+
+.main{
+    text-align: center;
+}
+
+.homeTitle{
+    text-transform: uppercase;
+    font-size: 40px;
+}
+
+.homeImg{
+    margin-top: 100px;
+}
+
+.aboutHeader{
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.aboutImg{
+    width: 500px;
+    height: 600px
+}
+
+.aboutText{
+    font-size: 25px;
+}
+
+.servicesHeader{
+    font-size: 40px;
+    text-transform: uppercase;
+}
+
+.servicesText{
+    font-size: 25px;
+}
+
+.servicesImgOne{
+    height: 600px;
+}
+
+.servicesDivTwo{
+    margin-top: 125px;
+}
+
+.servicesImgThree{
+    height: 600px;
+    width: 600px;
+}
+
+.servicesDiv{
+    display: flex;
+    justify-content: space-evenly;
+}
