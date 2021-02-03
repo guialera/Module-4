@@ -55,11 +55,10 @@ function Standings(props) {
                 type="text"
                 value={season}
                 name="season"
-                placeholder="Enter Years As 20172018"
+                placeholder="Enter Years Ex 20192020"
                 onChange={event => setSeason(event.target.value)}
             />
-            <button onClick={selectSeason}>Select Season</button>
-            <button onClick={() => updateStandings(selectedSeason)}>Update Season</button>
+            <button onClick={() => {updateStandings(season); selectSeason()}}>Select Season</button>
 
             <h1>Teams</h1>
             {allTeamStats}
