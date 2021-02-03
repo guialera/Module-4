@@ -17,8 +17,8 @@ function App() {
         <div>
             <nav>
                 <Link to="/">Home</Link>
-                <Link to="/teams">Teams</Link>
-                <Link to="/standings">Standings</Link>
+                <Link to="/teams">Current Season Teams</Link>
+                <Link to="/standings">Previous Season Standings</Link>
             </nav>
 
             <Switch>
