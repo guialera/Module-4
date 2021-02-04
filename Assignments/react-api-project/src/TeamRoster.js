@@ -22,7 +22,7 @@ function TeamRoster() {
         setToggle(prevToggle => !prevToggle)
     }
 
-    console.log(roster)
+    /*console.log(roster)*/
 
     let player = roster.map(function (each) {
         return (

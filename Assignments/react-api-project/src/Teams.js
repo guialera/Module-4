@@ -8,7 +8,7 @@ function Teams(props) {
     const { teams } = useContext(AppContext)
 
     let list = teams.teams
-    console.log(list)
+    /*console.log(list)*/
 
     let teamList = list.map(function (each) {
         return (

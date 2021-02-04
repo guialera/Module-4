@@ -17,7 +17,7 @@ function TeamStats() {
 
     }, [])
 
-    console.log(stats)
+    /*console.log(stats)*/
 
     return (
         <div className="teamStatsDiv">

@@ -8,13 +8,13 @@ function TeamInfo(props) {
     const { teamId } = useParams()
     const { teams } = useContext(AppContext)
 
-    console.log(teamId)
-    console.log(teams.teams)
+    /*console.log(teamId)
+    console.log(teams.teams)*/
 
     let team = teams.teams
 
     let teamInfo = team.find(each => each.id === Number(teamId))
-    console.log(teamInfo)
+    /*console.log(teamInfo)*/
 
     return (
         <div className="teamInfoDiv">
