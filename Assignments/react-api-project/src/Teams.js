@@ -13,7 +13,7 @@ function Teams(props) {
     let teamList = list.map(function (each) {
         return (
             <h1 key={each.id}>
-                <Link to={`/teams/${each.id}`}>
+                <Link className="teamsLinkText" to={`/teams/${each.id}`}>
                     {each.name}
                 </Link>
             </h1>
@@ -21,9 +21,11 @@ function Teams(props) {
     })
 
     return (
-        <div>
-            Teams
-            {teamList}
+        <div className="teamsDiv">
+            <h1 className="teamsHeader">2020-2021 Season Teams</h1>
+            <div className="teamsListDiv">
+                {teamList}
+            </div>
         </div>
     )
 }

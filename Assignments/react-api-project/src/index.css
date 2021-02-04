@@ -1,0 +1,61 @@
+body{
+    background-color:lightgray;
+}
+
+nav{
+    background-color: black;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 20px;
+}
+
+p{
+    font-size: 20px;
+}
+
+.appLinkText{
+    color: white;
+    font-size: 25px;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.homeDiv{
+    font-size: 25px;
+    text-align: center;
+}
+
+.teamsLinkText{
+    color: black;
+    text-decoration: none;
+    text-transform: none;
+}
+
+.teamsHeader{
+    text-align: center;
+    font-size: 40px;
+}
+
+.teamsDiv{
+    text-align: center;
+}
+
+.teamInfoDiv{
+    text-align: center;
+}
+
+.teamStatsDiv{
+    text-align: center;
+}
+
+.teamRosterDiv{
+    text-align: center;
+}
+
+.teamsListDiv{
+    display: inline-block;
+}
+
+.standingsDiv{
+    text-align: center; 
+}

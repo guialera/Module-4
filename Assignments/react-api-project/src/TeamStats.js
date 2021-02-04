@@ -20,7 +20,7 @@ function TeamStats() {
     console.log(stats)
 
     return (
-        <div>
+        <div className="teamStatsDiv">
             <h1>2020-2021 Season Stats</h1>
             <p>Games Played: {stats.gamesPlayed}</p>
             <p>Games Won: {stats.wins}</p>

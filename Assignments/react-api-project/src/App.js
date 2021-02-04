@@ -10,15 +10,17 @@ import TeamInfo from "./TeamInfo"
 
 import TeamStats from "./TeamStats"
 
+import TeamRoster from "./TeamRoster"
+
 import Standings from "./Standings"
 
 function App() {
     return (
         <div>
             <nav>
-                <Link to="/">Home</Link>
-                <Link to="/teams">Current Season Teams</Link>
-                <Link to="/standings">Previous Season Standings</Link>
+                <Link className="appLinkText" to="/">Home</Link>
+                <Link className="appLinkText" to="/teams">Current Season Teams</Link>
+                <Link className="appLinkText" to="/standings">Previous Season Standings</Link>
             </nav>
 
             <Switch>
@@ -31,6 +33,7 @@ function App() {
                 <Route path="/teams/:teamId">
                     <TeamInfo />
                     <TeamStats />
+                    <TeamRoster />
                 </Route>
                 <Route path="/standings">
                     <Standings />

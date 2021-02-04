@@ -17,7 +17,7 @@ function TeamInfo(props) {
     console.log(teamInfo)
 
     return (
-        <div>
+        <div className="teamInfoDiv">
             <h1>{`Welcome To The ${teamInfo.name} Page!`}</h1>
             <p>Venue: {teamInfo.venue.name}</p>
             <p>City of Play: {teamInfo.venue.city}</p>
