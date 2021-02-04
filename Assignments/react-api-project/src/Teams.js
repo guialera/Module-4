@@ -12,7 +12,7 @@ function Teams(props) {
 
     let teamList = list.map(function (each) {
         return (
-            <h1 key={each.id}>
+            <h1 className="teamsNameList" key={each.id}>
                 <Link className="teamsLinkText" to={`/teams/${each.id}`}>
                     {each.name}
                 </Link>

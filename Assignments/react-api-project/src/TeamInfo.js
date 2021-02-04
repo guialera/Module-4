@@ -18,7 +18,7 @@ function TeamInfo(props) {
 
     return (
         <div className="teamInfoDiv">
-            <h1>{`Welcome To The ${teamInfo.name} Page!`}</h1>
+            <h1 className="header">{`Welcome To The ${teamInfo.name} Page!`}</h1>
             <p>Venue: {teamInfo.venue.name}</p>
             <p>City of Play: {teamInfo.venue.city}</p>
             <p>First Year Of Play: {teamInfo.firstYearOfPlay}</p>

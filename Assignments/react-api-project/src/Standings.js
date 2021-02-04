@@ -34,7 +34,7 @@ function Standings(props) {
     let allTeamStats = mergeArr.map(function (each) {
         return (
             <div key={each.team.id}>
-                <h1>{each.team.name}</h1>
+                <h1 className="header">{each.team.name}</h1>
                 <p>Games Played: {each.gamesPlayed}</p>
                 <p>Wins: {each.leagueRecord.wins}</p>
                 <p>Losses: {each.leagueRecord.losses}</p>

@@ -21,7 +21,7 @@ function TeamStats() {
 
     return (
         <div className="teamStatsDiv">
-            <h1>2020-2021 Season Stats</h1>
+            <h1 className="header">2020-2021 Season Stats</h1>
             <p>Games Played: {stats.gamesPlayed}</p>
             <p>Games Won: {stats.wins}</p>
             <p>Games Lost: {stats.losses}</p>

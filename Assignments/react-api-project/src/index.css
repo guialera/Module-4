@@ -59,3 +59,75 @@ p{
 .standingsDiv{
     text-align: center; 
 }
+
+@media (max-width: 1100px){
+
+    .homeDiv{
+        font-size: 15px;
+    }
+
+    img{
+        width: 600px;
+        height: 500px;
+    }
+}
+
+@media (max-width: 800px){
+
+    .appLinkText{
+        font-size: 20px;
+    }
+
+    img{
+        width: 500px;
+        height: 400px;
+    }
+}
+
+@media (max-width: 600px){
+
+    p{
+        font-size: 15px;
+    }
+
+    .homeDiv{
+        font-size: 10px;
+    }
+
+    .appLinkText{
+        font-size: 15px;
+    }
+
+    img{
+        width: 400px;
+        height: 300px;
+    }
+
+    .teamsHeader{
+        font-size: 30px;
+    }
+
+    .teamsNameList{
+        font-size: 15px;
+    }
+}
+
+@media (max-width: 400px){
+
+    .appLinkText{
+        font-size: 12px;
+    }
+
+    img{
+        width: 300px;
+        height: 200px;
+    }
+
+    .teamsHeader{
+        font-size: 25px;
+    }
+
+    .header{
+        font-size: 20px;
+    }
+}
