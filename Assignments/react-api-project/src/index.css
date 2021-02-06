@@ -35,6 +35,10 @@ input{
     width: 175px;
 }
 
+.searchInput{
+    margin-top: 5px;
+}
+
 .appLinkText{
     color: white;
     font-size: 25px;

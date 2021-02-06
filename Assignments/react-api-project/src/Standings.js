@@ -5,6 +5,9 @@ import { AppContext } from "./appContext"
 function Standings(props) {
     const [season, setSeason] = useState("")
     const [selectedSeason, setSelectedSeason] = useState("")
+    const [searchTeam, setSearchTeam] = useState("")
+    const [foundTeam, setFoundTeam] = useState({ gamesPlayed: 0, points: 0, team: { id: 0, name: "Empty", }, leagueRecord: { wins: 0, losses: 0, ties: 0, ot: 0, } })
+    const [showFoundTeam, setShowFoundTeam] = useState(false)
     /*const [seasonStats, setSeasonStats] = useState([])*/
 
     const { standings, updateStandings, year } = useContext(AppContext)
@@ -15,6 +18,27 @@ function Standings(props) {
         setSelectedSeason(season)
         console.log(selectedSeason)
         setSeason("")
+    }
+
+    function searchFoundTeam() {
+        setSearchTeam("")
+
+        performSearch(searchTeam)
+        setShowFoundTeam(true)
+    }
+
+    function performSearch() {
+        /*console.log(searchTeam)*/
+
+        let sameTeam = mergeArr.find(each => searchTeam === each.team.name)
+
+        if (sameTeam === undefined) {
+            setFoundTeam({ gamesPlayed: 0, points: 0, team: { id: 0, name: "Empty", }, leagueRecord: { wins: 0, losses: 0, ties: 0, ot: 0, } })
+        } else {
+            setFoundTeam(sameTeam)
+        }
+
+        /*console.log(sameTeam)*/
     }
 
     let newYear = year
@@ -81,11 +105,32 @@ function Standings(props) {
                 placeholder="Enter Years Ex 20192020"
                 onChange={event => setSeason(event.target.value)}
             />
-            <button onClick={() => { updateStandings(season); selectSeason() }}>Select Season</button>
+            <button onClick={() => { updateStandings(season); selectSeason(); setShowFoundTeam(false) }}>Select Season</button> <br />
+            <div className="searchInput">
+                <input
+                    type="text"
+                    value={searchTeam}
+                    name="foundTeam"
+                    placeholder="Name of Team"
+                    onChange={event => setSearchTeam(event.target.value)}
+                />
+                <button onClick={() => { searchFoundTeam(searchTeam) }}>Search</button>
+            </div>
 
             <h1 className="standingsHeader">Teams</h1>
-            <div className="teamStandingsListDiv">
+            <div className="teamStandingsListDiv" style={{ display: showFoundTeam ? "none" : "flex" }}>
                 {allTeamStats}
+            </div>
+            <div className="teamStandingsListDiv" style={{ display: showFoundTeam ? "flex" : "none" }}>
+                <div className="teamStandingsIndividual" key={foundTeam.team.id}>
+                    <h1 className="header">{foundTeam.team.name}</h1>
+                    <p>Games Played: {foundTeam.gamesPlayed}</p>
+                    <p>Wins: {foundTeam.leagueRecord.wins}</p>
+                    <p>Losses: {foundTeam.leagueRecord.losses}</p>
+                    <p style={{ display: typeof foundTeam.leagueRecord.ties != "number" ? "none" : "block" }}> Ties: {foundTeam.leagueRecord.ties}</p>
+                    <p>OT Losses: {foundTeam.leagueRecord.ot}</p>
+                    <p>Points: {foundTeam.points}</p>
+                </div>
             </div>
 
         </div>
