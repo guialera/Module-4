@@ -26,7 +26,7 @@ function TeamRoster() {
 
     let player = roster.map(function (each) {
         return (
-            <div key={each.person.id}>
+            <div className="singlePlayer" key={each.person.id}>
                 <h1 className="header">{each.person.fullName} #{each.jerseyNumber}</h1>
                 <p>Position: {each.position.name}</p>
             </div>
@@ -35,10 +35,14 @@ function TeamRoster() {
 
     return (
         <div className="teamRosterDiv">
-            <h1 className="header">Current Team Roster</h1>
-            <button onClick={toggleHandle}>Display Roster</button>
+            <div className="rosterHeaderButtonDiv">
+                <h1 className="header">Current Team Roster</h1>
+                <button onClick={toggleHandle}>Display Roster</button>
+            </div>
             <div style={{ display: toggle ? "block" : "none" }}>
-                {player}
+                <div className="playersDiv">
+                    {player}
+                </div>
             </div>
         </div>
     )

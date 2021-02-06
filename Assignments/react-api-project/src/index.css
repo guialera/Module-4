@@ -6,11 +6,33 @@ nav{
     background-color: black;
     display: flex;
     justify-content: space-evenly;
+    padding-top: 5px;
+    padding-bottom: 5px;
     font-size: 20px;
 }
 
 p{
     font-size: 20px;
+}
+
+button{
+    background-color: black;
+    text-transform: uppercase;
+    font: bold;
+    color: white;
+    border: none;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+input{
+    margin-right: 5px;
+    border: none;
+    text-align: center;
+    height: 29px;
+    width: 175px;
 }
 
 .appLinkText{
@@ -40,24 +62,96 @@ p{
     text-align: center;
 }
 
+.teamsListDiv{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.teamsNameList{
+    background-color: whitesmoke;
+    flex-wrap: wrap;
+    border-style: solid;
+    width: 275px;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-left: 29px;
+    margin-top: 15px;
+}
+
 .teamInfoDiv{
+    background-color: whitesmoke;
+    border-style: solid;
     text-align: center;
+    margin-top: 15px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .teamStatsDiv{
+    background-color: whitesmoke;
+    border-style: solid;
     text-align: center;
+    width: 50%;
+    margin-top: 15px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .teamRosterDiv{
-    text-align: center;
+    text-align: center; 
 }
 
-.teamsListDiv{
-    display: inline-block;
+.rosterHeaderButtonDiv{
+    background-color: whitesmoke;
+    border-style: solid;
+    margin-top: 15px;
+    padding-bottom: 15px;
+    width: 50%;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.playersDiv{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.singlePlayer{
+    background-color: whitesmoke;
+    flex-wrap: wrap;
+    border-style: solid;
+    width: 275px;
+    margin-left: 29px;
+    margin-top: 15px;
 }
 
 .standingsDiv{
     text-align: center; 
+}
+
+.standingsHeader{
+    font-size: 40px;
+}
+
+.teamStandingsListDiv{
+    display: flex;
+    flex-direction: row;
+    flex-flow: wrap;
+    justify-content: center;
+}
+
+.teamStandingsIndividual{
+    background-color: whitesmoke;
+    flex-wrap: wrap;
+    border-style: solid;
+    width: 250px;
+    margin-left: 29px;
+    margin-top: 15px;
 }
 
 @media (max-width: 1100px){
@@ -81,6 +175,22 @@ p{
     img{
         width: 500px;
         height: 400px;
+    }
+
+    .teamInfoDiv{
+        width: 75%;
+    }
+
+    .teamStatsDiv{
+        width: 75%;
+    }
+
+    .rosterHeaderButtonDiv{
+        width: 75%;
+    }
+
+    .standingsHeader{
+        font-size: 29px;
     }
 }
 
@@ -112,7 +222,38 @@ p{
     }
 }
 
+@media (max-width: 500px){
+
+    button{
+        font-size: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    
+    .teamInfoDiv{
+        width: 95%;
+    }
+
+    .teamStatsDiv{
+        width: 95%;
+    }
+
+    .rosterHeaderButtonDiv{
+        width: 95%;
+    }
+}
+
 @media (max-width: 400px){
+
+    button{
+        font-size: 10px;
+        padding-top: 10px;
+        padding-bottom: 10px;
+        padding-left: 10px;
+        padding-right: 10px;
+    }
 
     .appLinkText{
         font-size: 12px;

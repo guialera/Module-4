@@ -7,17 +7,30 @@ function Standings(props) {
     const [selectedSeason, setSelectedSeason] = useState("")
     /*const [seasonStats, setSeasonStats] = useState([])*/
 
-    const { standings, updateStandings } = useContext(AppContext)
+    const { standings, updateStandings, year } = useContext(AppContext)
 
     /*setSeasonStats(standings)*/
 
     function selectSeason() {
         setSelectedSeason(season)
-        /*console.log(selectedSeason)*/
+        console.log(selectedSeason)
         setSeason("")
     }
 
-    let year = selectedSeason
+    let newYear = year
+
+    let stringYear = newYear.toString()
+    /*console.log(stringYear)*/
+
+    let stringYearSplit = stringYear.split("")
+    /*console.log(stringYearSplit)*/
+
+    let firstYear = stringYearSplit[0] + stringYearSplit[1] + stringYearSplit[2] + stringYearSplit[3]
+    let secondYear = stringYearSplit[4] + stringYearSplit[5] + stringYearSplit[6] + stringYearSplit[7]
+
+    let combineYear = `${firstYear}-${secondYear}`
+
+    /*console.log(combineYear)*/
 
     /*console.log(standings)*/
 
@@ -34,7 +47,7 @@ function Standings(props) {
     let allTeamStats = mergeArr.map(function (each) {
         if (typeof each.leagueRecord.ties === "number") {
             return (
-                <div key={each.team.id}>
+                <div className="teamStandingsIndividual" key={each.team.id}>
                     <h1 className="header">{each.team.name}</h1>
                     <p>Games Played: {each.gamesPlayed}</p>
                     <p>Wins: {each.leagueRecord.wins}</p>
@@ -46,7 +59,7 @@ function Standings(props) {
             )
         } else if (typeof each.leagueRecord.ties !== "number") {
             return (
-                <div key={each.team.id}>
+                <div className="teamStandingsIndividual" key={each.team.id}>
                     <h1 className="header">{each.team.name}</h1>
                     <p>Games Played: {each.gamesPlayed}</p>
                     <p>Wins: {each.leagueRecord.wins}</p>
@@ -60,7 +73,7 @@ function Standings(props) {
 
     return (
         <div className={"standingsDiv"}>
-            <h1>{year} Season Standings</h1>
+            <h1 className="standingsHeader">{combineYear} Season Standings</h1>
             <input
                 type="text"
                 value={season}
@@ -70,8 +83,10 @@ function Standings(props) {
             />
             <button onClick={() => { updateStandings(season); selectSeason() }}>Select Season</button>
 
-            <h1>Teams</h1>
-            {allTeamStats}
+            <h1 className="standingsHeader">Teams</h1>
+            <div className="teamStandingsListDiv">
+                {allTeamStats}
+            </div>
 
         </div>
     )
